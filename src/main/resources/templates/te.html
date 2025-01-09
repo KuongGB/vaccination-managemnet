@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh các cột input</title>
+    <link rel="stylesheet" href="path/to/your/css/styles.css">
+    <style>
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        label {
+            order: -1; /* Đặt thứ tự hiển thị của label ra đầu tiên trong mỗi cột */
+        }
+        .input-with-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon img {
+            margin-right: 5px; /* Khoảng cách giữa biểu tượng và trường input */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="input-column">
+            <label for="input1">Input 1:</label>
+            <div class="input-with-icon">
+                <i src="vendors/images/photo1.jpg" alt="" ></i>
+                <img src="vendors/images/photo1.jpg" alt=""><!-- Thay "fa fa-user" bằng class của biểu tượng bạn muốn sử dụng -->
+                <input type="text" id="input1" name="input1" th:value="${input1Value}">
+            </div>
+        </div>
+        <div class="input-column">
+            <label for="input2">Input 2:</label>
+            <div class="input-with-icon">
+                <i class="fa fa-envelope"></i> <!-- Thay "fa fa-envelope" bằng class của biểu tượng bạn muốn sử dụng -->
+                <input type="text" id="input2" name="input2" th:value="${input2Value}">
+            </div>
+        </div>
+        <div class="input-column">
+            <label for="input3">Input 3:</label>
+            <div class="input-with-icon">
+                <i src="vendors/images/photo1.jpg" alt=""></i> <!-- Thay "fa fa-lock" bằng class của biểu tượng bạn muốn sử dụng -->
+                <input type="text" id="input3" name="input3" th:value="${input3Value}">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
